@@ -12,7 +12,6 @@ function Slider(){
 				index = 1;
 			}
 			$pointer.addClass("slide-" + index);
-			console.log("slide-" + index);
 		});
 		$pointer.fadeIn(1000);
 		$pointer.delay(1000);
