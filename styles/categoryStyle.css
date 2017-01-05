@@ -6,6 +6,26 @@ html, body {
 	height: 100%;
 }
 
+@media  (min-width : 200px){
+    html{ font-size : 13px;} 
+}
+
+@media  (min-width : 768px){
+    html{ font-size : 15px;} 
+}
+ 
+@media  (min-width : 1024px) {
+    html{ font-size : 17px;} 
+}
+
+/*html { 
+	font-size: calc(112.5% + 0.25vw); 
+}
+
+h1 {
+	font-size: 2em; 
+}*/
+
 h1, h2, h3 ,h4, h5, h6, p {
 	margin-bottom: 20px;
 }
@@ -24,26 +44,50 @@ nav a {
 	color: white;
 	margin-left: 30px;
 	line-height: 50px;
+	font-family: "メイリオ","Arial","Verdana", "ヒラギノ角ゴ Pro W3", "ＭＳ ゴシック", "Osaka‐等幅";
+
 }
 
 .sect {
 	height: 100%;
 	background-size: cover;
 	background-attachment: fixed;
+
+	position: relative;
 }
 
 .subSection {
 	height: 50%;
 }
 
+.sect1 p {
+	position: absolute;
+	color: white;
+	font-size: 3em;
+	font-family: "メイリオ","Arial","Verdana", "ヒラギノ角ゴ Pro W3", "ＭＳ ゴシック", "Osaka‐等幅";
+	left: 50%;
+	top: 30%;
+	width: 500px;
+	margin-left: -250px;
+	text-align: center;
+}
+
 .sect1 {
-	background-image: url("https://www.rochester.edu/libraries/images/rush-rhees.jpg");
+	background-image: url("http://chutai-ryugaku-report.info/wp-content/uploads/2015/01/woman-670130_1920.jpg");
 }
 
 .sect2 {
-	background-image: url("http://www.industriet.com/images/www.designsnext.com/wp-content/uploads/2014/04/University-of-Sydney.jpg");
+	background-image: url("http://chutai-ryugaku-report.info/wp-content/uploads/2015/01/university-470184_1280.jpg");
 }
 
 .sect3 {
-	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/22/1e/fc/221efc036ebc1550b5a7fa994e9d5929.jpg");
+	background-image: url("http://chutai-ryugaku-report.info/wp-content/uploads/2015/01/university-418223_1920.jpg");
+}
+
+.sect4 {
+	background-image: url("http://chutai-ryugaku-report.info/wp-content/uploads/2015/01/university-of-iowa-1808151_1280.jpg");
+}
+
+.sect5 {
+	background-image: url("http://chutai-ryugaku-report.info/wp-content/uploads/2015/01/purdue-university-1848563_1280.jpg");
 }
