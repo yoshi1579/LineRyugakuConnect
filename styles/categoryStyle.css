@@ -6,6 +6,16 @@ html, body {
 	height: 100%;
 }
 
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
 @media  (min-width : 200px){
     html{ font-size : 13px;} 
 }
@@ -18,14 +28,6 @@ html, body {
     html{ font-size : 17px;} 
 }
 
-/*html { 
-	font-size: calc(112.5% + 0.25vw); 
-}
-
-h1 {
-	font-size: 2em; 
-}*/
-
 h1, h2, h3 ,h4, h5, h6, p {
 	margin-bottom: 20px;
 }
@@ -34,17 +36,72 @@ nav {
 	position: fixed;
 	width: 100%;
 	height: 50px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.65);
 	z-index: 999;
-	text-align: center;
 }
 
-nav a {
-	text-decoration: none;
-	color: white;
+nav ul {
+	position: absolute;
+	left: 50%;
+	width: 600px;
+	margin-left: -300px;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
 	margin-left: 30px;
 	line-height: 50px;
+	
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: white;
 	font-family: "メイリオ","Arial","Verdana", "ヒラギノ角ゴ Pro W3", "ＭＳ ゴシック", "Osaka‐等幅";
+}
+
+.dropDown img {
+		display: none;
+	}
+
+@media screen and (max-width: 480px){
+
+	.dropDown {
+		display: block;
+		height: 50px;
+	}
+
+	.dropDown img {
+		display: block;
+		position: absolute;
+		left: 85%;
+		width: 30px;
+		height: 30px;
+		margin: 10px 10px;
+		cursor: pointer;
+	}
+
+	nav ul {
+		display: none;
+		left: 0%;
+		margin-left: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.65);
+	}
+
+	nav ul li {
+		display: block;
+	}
+
+	nav ul.open {
+		display: initial;
+	}
+
+	#kakuyasuSection .grid .row .col-4 .col img {
+		width: 100%;
+		height: 100px;
+	}
 
 }
 
@@ -57,19 +114,184 @@ nav a {
 }
 
 .subSection {
-	height: 50%;
+	height: 70%;
 }
 
-.sect1 p {
+#kakuyasuSection {
+	background-color: #232323;
+}
+
+#kakuyasuSection img:nth-child(1) {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	box-shadow: 0px 0px 10px 3px #888888;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+
+/*setting up modal window*/
+#modal-content{
+	display: none;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width:auto;
+	margin:1.5em auto 0;
+	/*padding:10px 20px;*/
+	border:2px solid #aaa;
+	background:#fff;
+	z-index:9999;
+
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#modal-content-header {
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: #232323;
+	margin: 0 0 10px 0;
+	padding: 5px 10px 0px 10px;
+
+}
+
+#modal-content-header p {
+	color: white;
+	font-size: 1em;
+	font-family: "メイリオ","Arial","Verdana", "ヒラギノ角ゴ Pro W3", "ＭＳ ゴシック", "Osaka‐等幅";
+
+}
+
+#modal-content img {
+	position: relative;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
+
+.button-link{
+	color:#00f;
+	text-decoration:underline;
+}
+ 
+.button-link:hover{
+	cursor:pointer;
+	color:#f00;
+}
+
+#modal-overlay {
+	display: none;
+	z-index: 9998;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 120%;
+	background-color: rgba(0,0,0,0.75);
+}
+
+.sect p {
 	position: absolute;
 	color: white;
-	font-size: 3em;
 	font-family: "メイリオ","Arial","Verdana", "ヒラギノ角ゴ Pro W3", "ＭＳ ゴシック", "Osaka‐等幅";
 	left: 50%;
 	top: 30%;
-	width: 500px;
-	margin-left: -250px;
+	width: 550px;
+	margin-left: -275px;
 	text-align: center;
+}
+
+.col-6 .col p {
+	position: absolute;
+	padding: 25px;
+	top: 50%;
+	color: white;
+	text-align: left;
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+}
+
+#modal-open {
+	color: #FF1493;
+}
+
+/*setting up grid*/
+.grid {
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.row {
+	height: 100%;
+}
+
+.grid:before,
+.grid:after,
+.grid:before,
+.grid:after {
+	content: " ";
+	display: table;
+}
+
+.grid:after,
+.row:after {
+	clear: both;
+}
+
+[class*='col-']{
+	width: 100%;
+	float: left;
+	min-height: 1px;
+}
+
+.col-4 {width: 33.33333%; height: 70%;background: #191919;}
+
+.col-6 {width: 66.66666%; height: 100%;background: #191919;}
+
+#kakuyasuSection .col-4 {
+	height: 100%;
+}
+
+.row .col-4:nth-child(3){
+	background: #151515;
+}
+
+.col-12{
+	width: 100%;
+	height: 30%; 
+	background: #232323;
+}
+
+.col {
+	position: relative;
+	height: 100%;
+	padding: 20px;
+	text-align: center;
+	font-family: "メイリオ","Arial","Verdana", "ヒラギノ角ゴ Pro W3", "ＭＳ ゴシック", "Osaka‐等幅";
+}
+
+.col img {
+	width: 70px;
+	height: 70px;
 }
 
 .sect1 {
