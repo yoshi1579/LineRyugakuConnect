@@ -16,16 +16,22 @@ html {
 	box-sizing: inherit;
 }
 
-@media  (min-width : 200px){
-    html{ font-size : 13px;} 
+@media  (min-width : 50px){
+    html{ font-size : 10px;} 
 }
 
-@media  (min-width : 768px){
+@media  (min-width : 600px){
     html{ font-size : 15px;} 
+    
 }
  
 @media  (min-width : 1024px) {
     html{ font-size : 17px;} 
+
+    .subSection .grid .row .col-4 .col .studentPic img {
+		width: 300px;
+		height: 300px;
+	}
 }
 
 h1, h2, h3 ,h4, h5, h6, p {
@@ -98,9 +104,9 @@ nav ul li a {
 		display: initial;
 	}
 
-	#kakuyasuSection .grid .row .col-4 .col img {
-		width: 100%;
-		height: 100px;
+	.subSection .grid .row .col-4 .col .studentPic img {
+		width: 150px;
+		height: 150px;
 	}
 
 }
@@ -117,11 +123,12 @@ nav ul li a {
 	height: 70%;
 }
 
-#kakuyasuSection {
-	background-color: #232323;
+.subSection {
+	background-color: #191919;
+	position: relative;
 }
 
-#kakuyasuSection img:nth-child(1) {
+.studentPic img {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -138,7 +145,7 @@ nav ul li a {
 
 
 /*setting up modal window*/
-#modal-content{
+[id*='modal-content-']{
 	display: none;
 	position: fixed;
 	left: 50%;
@@ -157,7 +164,7 @@ nav ul li a {
 	transform: translate(-50%, -50%);
 }
 
-#modal-content-header {
+#modal-contentHeader {
 	position: relative;
 	top: 0;
 	left: 0;
@@ -167,16 +174,18 @@ nav ul li a {
 
 }
 
-#modal-content-header p {
+#modal-contentHeader p {
 	color: white;
 	font-size: 1em;
 	font-family: "メイリオ","Arial","Verdana", "ヒラギノ角ゴ Pro W3", "ＭＳ ゴシック", "Osaka‐等幅";
 
 }
 
-#modal-content img {
+[id*='modal-content-'] img {
 	position: relative;
 	left: 50%;
+	width: 300px;
+	height: 300px;
 	-webkit-transform: translate(-50%, 0);
 	-moz-transform: translate(-50%, 0);
 	-ms-transform: translate(-50%, 0);
@@ -192,6 +201,10 @@ nav ul li a {
 .button-link:hover{
 	cursor:pointer;
 	color:#f00;
+}
+
+.modal-open {
+	color: #FF1493;
 }
 
 #modal-overlay {
@@ -222,26 +235,52 @@ nav ul li a {
 	top: 50%;
 	color: white;
 	text-align: left;
-	-webkit-transform: translate(0, -50%);
-	-moz-transform: translate(0, -50%);
-	-ms-transform: translate(0, -50%);
-	-o-transform: translate(0, -50%);
-	transform: translate(0, -50%);
+	-webkit-transform: translate(0, -60%);
+	-moz-transform: translate(0, -60%);
+	-ms-transform: translate(0, -60%);
+	-o-transform: translate(0, -60%);
+	transform: translate(0, -60%);
 }
 
-#modal-open {
-	color: #FF1493;
+.col-4 .col .backArrow img {
+	position: absolute;
+	top: 80%;
+	left: 20%;
+	width: 70px;
+	height: 70px;
 }
+
+.col-4 .col .backArrow img:hover {
+	background-color: #00FFFF;
+	border-radius: 50%;
+}
+
+.col-6 .col .nextArrow img {
+	position: absolute;
+	top: 80%;
+	left: 70%;
+	width: 70px;
+	height: 70px;
+}
+
+.col-6 .col img:hover {
+	background-color: #00FFFF;
+	border-radius: 50%;
+}
+
+
 
 /*setting up grid*/
 .grid {
 	width: 100%;
 	margin: 0 auto;
 	height: 100%;
+	overflow: hidden;
 }
 
 .row {
 	height: 100%;
+	
 }
 
 .grid:before,
@@ -267,7 +306,7 @@ nav ul li a {
 
 .col-6 {width: 66.66666%; height: 100%;background: #191919;}
 
-#kakuyasuSection .col-4 {
+.subSection .col-4 {
 	height: 100%;
 }
 
@@ -289,7 +328,7 @@ nav ul li a {
 	font-family: "メイリオ","Arial","Verdana", "ヒラギノ角ゴ Pro W3", "ＭＳ ゴシック", "Osaka‐等幅";
 }
 
-.col img {
+#topSection .grid .row .col-4 .col img {
 	width: 70px;
 	height: 70px;
 }
