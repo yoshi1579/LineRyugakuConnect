@@ -1,0 +1,44 @@
+html, body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.wrap{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	background: #120103;
+	color: #fff;
+	text-align: center;
+}
+
+.slide {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	padding: 8em 1em 0;
+	background-color: #120103;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.slide-1 {
+	background-image: url('https://i.cbc.ca/1.1862741.1379713314!/cpImage/httpImage/image.jpg_gen/derivatives/16x9_620/us-college-harvard.jpg');
+}
+
+.slide-2 {
+	background-image: url('http://static3.businessinsider.com/image/52027b3269bedd405b000013-1190-625/the-20-best-college-campuses-in-the-us.jpg');
+}
+
+.slide-3 {
+	background-image: url('http://www.bestvalueschools.com/wp-content/uploads/2015/04/Blackburn-College-Small-Affordable-Colleges-1024x731.jpg');
+}
+
+.slide-4 {
+	background-image: url('http://static2.businessinsider.com/image/55eefff5bd86ef1f008b8ab7/the-25-us-colleges-whose-graduates-earn-the-most-money.jpg');
+}
